@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "duskwoodmanor",
+    "version": "${version}",
+    "name": "Duskwood Manor",
+    "description": "A mod for Duskwood Manor, a custom map for Wathe.",
+    "authors": [
+        "undefined0", "somewhat_grand"
+    ],
+    "contact": {
+        "homepage": "https://duskwoodmanor.undefined0.dev/",
+        "sources": "https://github.com/undefined06855/Duskwood-Manor"
+    },
+    "license": "All Rights Reserved",
+    "icon": "assets/duskwoodmanor/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "dev.undefined0.duskwoodmanor.DuskwoodManor"
+        ]
+    },
+    "mixins": [
+        "duskwoodmanor.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.19.3",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*",
+        "wathe": ">=1.3.2-1.21.1"
+    }
+}

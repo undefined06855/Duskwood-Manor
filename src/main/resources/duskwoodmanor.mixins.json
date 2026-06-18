@@ -1,0 +1,16 @@
+{
+    "required": true,
+    "package": "dev.undefined0.duskwoodmanor.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "ShopEntryMixin",
+        "WatheRoleAccessor",
+        "WatheRolesMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}
