@@ -1,6 +1,8 @@
 # Duskwood Manor To-do List
 
 - Make blackout longer
+- Disable light toggling
+- Fix candles ????
 - Fix prices not crashing
 - Resources
     - Mod logo
