@@ -15,9 +15,12 @@
     - Sounds
     - Functionality
 - Finalise credits text
-- Rename mansion to manor everywhere
+
 - Final check over strings
 - set up https://duskwoodmanor.undefined0.dev if i have the willingness
 - Upload world file to GitHub
 - Modrinth page?
 - Clean up imports
+
+## Done
+- Rename mansion to manor everywhere

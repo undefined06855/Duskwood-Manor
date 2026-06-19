@@ -7,7 +7,7 @@ import dev.undefined0.duskwoodmanor.DuskwoodManor;
 import dev.undefined0.duskwoodmanor.game.mapeffect.ManorMapEffect;
 
 public class ManorMapEffects {
-    public static final Identifier MANOR_ID = DuskwoodManor.id("mansion");
+    public static final Identifier MANOR_ID = DuskwoodManor.id("manor");
     public static final Identifier LOBBY_ID = DuskwoodManor.id("lobby");
 
     public static final MapEffect MANOR = registerMapEffect(MANOR_ID, new ManorMapEffect(MANOR_ID));
