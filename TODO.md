@@ -12,7 +12,6 @@
     - Model
     - Sounds
     - Functionality
-- Finalise credits text
 
 - Final check over strings
 - set up https://duskwoodmanor.undefined0.dev if i have the willingness
@@ -27,4 +26,4 @@
 - Fix resource pack incorrect version
 - Fix lobby text
 - Fix map effects!!!!!!!!!!!!! FINALLY!!!!
-
+- Finalise credits text
