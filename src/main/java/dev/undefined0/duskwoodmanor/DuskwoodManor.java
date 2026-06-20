@@ -32,6 +32,8 @@ public class DuskwoodManor implements ModInitializer {
 
         ManorMapEffects.init();
 
+        // im not actually sure this is how you're meant to use events like this? a lambda couldve definitely been used
+        // but it's nice to have them in their own files and stuff like this
         GameEvents.ON_FINISH_FINALIZE.register(new GameEventsListener());
         GameEvents.ON_FINISH_INITIALIZE.register(new GameEventsListener());
         UseBlockCallback.EVENT.register(new UseBlockListener());

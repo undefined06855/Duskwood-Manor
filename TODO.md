@@ -1,6 +1,7 @@
 # Duskwood Manor To-do List
 
 - Fix candles ????
+- Fix resource pack name lol
 - Resources
     - Mod logo
     - Pack logo
