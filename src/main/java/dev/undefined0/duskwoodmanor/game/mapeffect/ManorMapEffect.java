@@ -22,8 +22,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.List;
 
-// even though this isnt a train and i dont need anything from trainmapeffect, it needs to be an instanceof
-// HarpyExpressTrainMapEffect so that the time of day updates correctly
 public class ManorMapEffect extends HarpyExpressTrainMapEffect {
     public ManorMapEffect(Identifier identifier) {
         super(identifier);
