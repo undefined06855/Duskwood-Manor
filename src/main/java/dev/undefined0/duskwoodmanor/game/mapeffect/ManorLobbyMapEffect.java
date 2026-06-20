@@ -8,8 +8,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 
-// even though this isnt a train and i dont need anything from trainmapeffect, it needs to be an instanceof
-// HarpyExpressTrainMapEffect so that the time of day updates correctly
 public class ManorLobbyMapEffect extends HarpyExpressTrainMapEffect {
     public ManorLobbyMapEffect(Identifier identifier) {
         super(identifier);
