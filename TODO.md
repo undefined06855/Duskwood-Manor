@@ -1,15 +1,13 @@
 # Duskwood Manor To-do List
 
 - Make blackout longer
-- Disable light toggling
+- Disable light toggling and water taking from cauldrons and water sources
 - Fix candles ????
-- Fix prices not crashing
 - Resources
     - Mod logo
     - Pack logo
     - Inventory splash
     - Title panoramas
-- Fix map effects
 - Start button (knocker)
     - Model
     - Sounds
@@ -24,3 +22,9 @@
 
 ## Done
 - Rename mansion to manor everywhere
+- Fix prices not crashing
+- Add more detailed tooltips to the letter and change strings
+- Fix resource pack incorrect version
+- Fix lobby text
+- Fix map effects!!!!!!!!!!!!! FINALLY!!!!
+

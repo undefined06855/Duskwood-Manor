@@ -35,6 +35,7 @@ loom {
     mods {
         "duskwoodmanor" {
             sourceSet sourceSets.main
+			sourceSet sourceSets.client
         }
     }
 

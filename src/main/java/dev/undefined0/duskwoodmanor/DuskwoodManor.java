@@ -10,7 +10,9 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import dev.doctor4t.wathe.api.event.GameEvents;
 import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
+import dev.undefined0.duskwoodmanor.integration.FinishFinalizeListener;
 
 public class DuskwoodManor implements ModInitializer {
     public static final String MOD_ID = "duskwoodmanor";
@@ -27,6 +29,9 @@ public class DuskwoodManor implements ModInitializer {
         }
 
         ManorMapEffects.init();
+
+        GameEvents.ON_FINISH_FINALIZE.register(new FinishFinalizeListener());
+        GameEvents.ON_FINISH_INITIALIZE.register(new FinishFinalizeListener());
     }
 
     public static Identifier id(String path) {

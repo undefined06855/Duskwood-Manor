@@ -7,6 +7,7 @@ import java.util.function.UnaryOperator;
 import dev.doctor4t.wathe.api.MapEffect;
 import dev.doctor4t.wathe.cca.GameWorldComponent;
 import dev.doctor4t.wathe.cca.TrainWorldComponent;
+import dev.doctor4t.wathe.cca.TrainWorldComponent.TimeOfDay;
 import dev.doctor4t.wathe.game.mapeffect.HarpyExpressTrainMapEffect;
 import dev.doctor4t.wathe.index.WatheItems;
 import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
@@ -21,6 +22,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.List;
 
+// even though this isnt a train and i dont need anything from trainmapeffect, it needs to be an instanceof
+// HarpyExpressTrainMapEffect so that the time of day updates correctly
 public class ManorMapEffect extends HarpyExpressTrainMapEffect {
     public ManorMapEffect(Identifier identifier) {
         super(identifier);
@@ -33,8 +36,9 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
         trainWorldComponent.setFog(true);
         trainWorldComponent.setHud(true);
         trainWorldComponent.setSpeed(0);
-        trainWorldComponent.setTimeOfDay(TrainWorldComponent.TimeOfDay.NIGHT);
+        trainWorldComponent.setTime(0);
 
+        serverWorld.setTimeOfDay(18000);
 
         // select rooms
         // this is basically copied from Wathe but with the room count and lore changed
@@ -65,13 +69,14 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
 
                         text.add(Text.translatable(tipString + "name", string).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
                         text.add(Text.translatable(tipString + "room").styled(stylizer));
-                        text.add(Text.translatable(tipString + "tooltip1",
-                                Text.translatable(tipString + "room." + switch (finalRoomNumber) {
-                                    case 1 -> "grand_suite";
-                                    case 2, 3 -> "cabin_suite";
-                                    default -> "twin_cabin";
-                                }).getString()
+                        text.add(Text.translatable(
+                            tipString + "tooltip1",
+                            Text.translatable(tipString + "room." + finalRoomNumber).getString()
                         ).styled(stylizer));
+                        text.add(Text.translatable(
+                            tipString + "tooltip3",
+                            Text.translatable(tipString + "room.directions." + finalRoomNumber).getString()
+                        ).styled(style -> style.withItalic(true).withColor(0x99876D)));
                         text.add(Text.translatable(tipString + "tooltip2").styled(stylizer));
 
                         return new LoreComponent(text);
@@ -84,8 +89,8 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
     @Override
     public void finalizeMapEffects(ServerWorld serverWorld, List<ServerPlayerEntity> players) {
         // switch back to the lobby map effects
-        GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(serverWorld);
-        gameWorldComponent.setMapEffect(ManorMapEffects.LOBBY);
-        gameWorldComponent.getMapEffect().initializeMapEffects(serverWorld, players);
+        // GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(serverWorld);
+        // gameWorldComponent.setMapEffect(ManorMapEffects.LOBBY);
+        // gameWorldComponent.getMapEffect().initializeMapEffects(serverWorld, players);
     }
 }

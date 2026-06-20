@@ -2,13 +2,14 @@ package dev.undefined0.duskwoodmanor.game.mapeffect;
 
 import java.util.List;
 
-import dev.doctor4t.wathe.api.MapEffect;
 import dev.doctor4t.wathe.cca.TrainWorldComponent;
 import dev.doctor4t.wathe.game.mapeffect.HarpyExpressTrainMapEffect;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 
+// even though this isnt a train and i dont need anything from trainmapeffect, it needs to be an instanceof
+// HarpyExpressTrainMapEffect so that the time of day updates correctly
 public class ManorLobbyMapEffect extends HarpyExpressTrainMapEffect {
     public ManorLobbyMapEffect(Identifier identifier) {
         super(identifier);
@@ -21,12 +22,13 @@ public class ManorLobbyMapEffect extends HarpyExpressTrainMapEffect {
         trainWorldComponent.setFog(false);
         trainWorldComponent.setHud(true);
         trainWorldComponent.setSpeed(0);
-        trainWorldComponent.setTimeOfDay(TrainWorldComponent.TimeOfDay.SUNDOWN);
+        trainWorldComponent.setTime(0);
+
+        serverWorld.setTimeOfDay(12800);
     }
 
     @Override
     public void finalizeMapEffects(ServerWorld serverWorld, List<ServerPlayerEntity> players) {
 
     }
-
 }

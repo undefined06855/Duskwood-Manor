@@ -14,15 +14,44 @@
     "announcement.welcome": "Welcome %s",
     "announcement.win.civilian": "Guests Win!",
     "announcement.win.vigilante": "Guests Win!",
+
     "game.win.passengers": "All killers were eliminated: the guests win!",
     "game.win.time": "The killers ran out of time: the guests win!",
+
     "item.wathe.blackout.tooltip": "Turn off all lights in the manor for 15 to 30 seconds\nUse your instinct [left-alt] to see your targets in the dark\nActivated instantly on purchase, 5 minute cooldown",
     "item.wathe.revolver.tooltip": "Point, right-click and shoot\nDrops if you kill a guest",
+
     "lobby.autostart.active": "Game will start once 6+ guests are present",
     "lobby.players.count": "Guests present: %s / %s",
+
     "tip.letter.name": "Dear %s, welcome to Duskwood Manor!",
-    "tip.letter.room.twin_cabin": "your Twin Room",
+    "tip.letter.room": "Please find enclosed your invite as well as your key for accessing",
+
+    "tip.letter.room.1": "the Grand Suite",
+    "tip.letter.room.2": "the Grand Balcony Suite",
+    "tip.letter.room.3": "the Study Suite",
+    "tip.letter.room.4": "your Skylight Suite",
+    "tip.letter.room.5": "your Skylight Suite",
+    "tip.letter.room.6": "your Study Suite",
+    "tip.letter.room.7": "the Leisure Suite",
+    "tip.letter.room.8": "your Study Suite",
+    "tip.letter.room.9": "your Study Suite",
+    "tip.letter.room.10": "the Plus Size Suite",
+
+    "tip.letter.room.directions.1": "on the ground floor, in the West wing.",
+    "tip.letter.room.directions.2": "on the ground floor, in the West wing.",
+    "tip.letter.room.directions.3": "on the first floor, opposite the foyer.",
+    "tip.letter.room.directions.4": "on the first floor, opposite the West staircase.",
+    "tip.letter.room.directions.5": "on the first floor, to the right of the staircase.",
+    "tip.letter.room.directions.6": "on the first floor, in the East wing.",
+    "tip.letter.room.directions.7": "on the first floor, in the East wing.",
+    "tip.letter.room.directions.8": "on the first floor, near the East staircase.",
+    "tip.letter.room.directions.9": "on the second floor, in the East wing, turning left.",
+    "tip.letter.room.directions.10": "on the second floor, in the East wing, turning right.",
+
     "tip.letter.tooltip1": "%s for your trip on the 15th of April 1912.",
+    "tip.letter.tooltip3": "Your room is %s",
     "tip.letter.tooltip2": "La Sirène wishes you a pleasant and safe stay.",
-    "credits.wathe.thank_you": "Thank you for playing The Last Voyage of the Harpy Express!\nMe and my team spent a lot of time working\non this mod and we hope you enjoy it.\nIf you do and wish to make a video or stream\nplease make sure to credit my channel,\nvideo and the mod page!\n - RAT / doctor4t\n \nThanks for playing on Duskwood Manor!\n- somewhat_grand"
+
+    "credits.wathe.thank_you": "Thank you for playing The Last Voyage of the Harpy Express!\nMe and my team spent a lot of time working\non this mod and we hope you enjoy it.\nIf you do and wish to make a video or stream\nplease make sure to credit my channel,\nvideo and the mod page!\n - RAT / doctor4t\n \nI appreciate you spending the time to play and\nexplore my map, hope you enjoy!\n- somewhat_grand"
 }
