@@ -1,6 +1,5 @@
 # Duskwood Manor To-do List
 
-- Make blackout longer
 - Disable light toggling and water taking from cauldrons and water sources
 - Fix candles ????
 - Resources
@@ -12,7 +11,6 @@
     - Model
     - Sounds
     - Functionality
-
 - Final check over strings
 - set up https://duskwoodmanor.undefined0.dev if i have the willingness
 - Upload world file to GitHub
@@ -27,3 +25,4 @@
 - Fix lobby text
 - Fix map effects!!!!!!!!!!!!! FINALLY!!!!
 - Finalise credits text
+- Make blackout longer

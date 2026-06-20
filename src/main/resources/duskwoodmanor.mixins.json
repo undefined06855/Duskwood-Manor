@@ -6,12 +6,16 @@
         "ShopEntryMixin",
         "TrainWorldComponentMixin",
         "WatheRoleAccessor",
-        "WatheRolesMixin"
+        "WatheRolesMixin",
+        "WorldBlackoutComponentMixin"
     ],
     "injectors": {
         "defaultRequire": 1
     },
     "overwrites": {
         "requireAnnotations": true
+    },
+    "mixinextras": {
+        "minVersion": "0.5.4"
     }
 }
