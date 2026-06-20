@@ -36,8 +36,6 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
         trainWorldComponent.setSpeed(0);
         trainWorldComponent.setTime(0);
 
-        serverWorld.setTimeOfDay(18000);
-
         // select rooms
         // this is basically copied from Wathe but with the room count and lore changed
         Collections.shuffle(players);

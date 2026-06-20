@@ -21,8 +21,6 @@ public class ManorLobbyMapEffect extends HarpyExpressTrainMapEffect {
         trainWorldComponent.setHud(true);
         trainWorldComponent.setSpeed(0);
         trainWorldComponent.setTime(0);
-
-        serverWorld.setTimeOfDay(12800);
     }
 
     @Override
