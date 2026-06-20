@@ -1,4 +1,4 @@
-package dev.undefined0.duskwoodmanor.integration;
+package dev.undefined0.duskwoodmanor.events;
 
 import dev.doctor4t.wathe.api.WatheGameModes;
 import dev.doctor4t.wathe.api.event.GameEvents;
@@ -6,7 +6,7 @@ import dev.doctor4t.wathe.cca.GameWorldComponent;
 import net.minecraft.world.World;
 
 // doctor4t this is a great mod and i love it but can the time of day system be a LITTLE better??
-public class FinishFinalizeListener implements GameEvents.OnFinishFinalize, GameEvents.OnFinishInitialize {
+public class GameEventsListener implements GameEvents.OnFinishFinalize, GameEvents.OnFinishInitialize {
     @Override
     public void onFinishInitialize(World world, GameWorldComponent gameComponent) {
         if (world.isClient) return;

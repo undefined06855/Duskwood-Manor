@@ -1,6 +1,5 @@
 # Duskwood Manor To-do List
 
-- Disable light toggling and water taking from cauldrons and water sources
 - Fix candles ????
 - Resources
     - Mod logo
@@ -26,3 +25,4 @@
 - Fix map effects!!!!!!!!!!!!! FINALLY!!!!
 - Finalise credits text
 - Make blackout longer
+- Disable light toggling and water taking from cauldrons and water sources

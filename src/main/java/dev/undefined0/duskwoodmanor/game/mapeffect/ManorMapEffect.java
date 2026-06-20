@@ -78,6 +78,7 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
                         return new LoreComponent(text);
                     }
             );
+
             serverPlayerEntity.giveItemStack(letter);
         }
     }
