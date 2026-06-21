@@ -5,7 +5,6 @@
     - Mod logo
     - Pack logo
     - Inventory splash
-    - Title panoramas
 - Start button (knocker)
     - Model
     - Sounds
@@ -27,3 +26,5 @@
 - Make blackout longer
 - Disable light toggling and water taking from cauldrons and water sources
 - Fix resource pack name lol
+- Resources
+    - Title panoramas
