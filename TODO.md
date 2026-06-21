@@ -1,7 +1,6 @@
 # Duskwood Manor To-do List
 
 - Fix candles ????
-- Fix resource pack name lol
 - Resources
     - Mod logo
     - Pack logo
@@ -27,3 +26,4 @@
 - Finalise credits text
 - Make blackout longer
 - Disable light toggling and water taking from cauldrons and water sources
+- Fix resource pack name lol
