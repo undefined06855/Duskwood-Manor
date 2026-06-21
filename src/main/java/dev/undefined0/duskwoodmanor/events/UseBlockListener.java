@@ -44,9 +44,15 @@ public class UseBlockListener implements UseBlockCallback {
         }
 
         for (String key : whitelistedKeys) {
-            if (name == key) {
+            DuskwoodManor.LOGGER.info("" + name + ", " + key);
+            if (name.equals(key)) {
                 return ActionResult.PASS;
             }
+        }
+
+        // are we serious
+        if (name.contains("wathe") && name.contains("door")) {
+            return ActionResult.PASS;
         }
 
         return ActionResult.FAIL;
