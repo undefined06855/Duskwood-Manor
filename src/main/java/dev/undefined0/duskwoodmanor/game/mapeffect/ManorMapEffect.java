@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.UnaryOperator;
 
-import dev.doctor4t.wathe.api.MapEffect;
-import dev.doctor4t.wathe.cca.GameWorldComponent;
 import dev.doctor4t.wathe.cca.TrainWorldComponent;
-import dev.doctor4t.wathe.cca.TrainWorldComponent.TimeOfDay;
 import dev.doctor4t.wathe.game.mapeffect.HarpyExpressTrainMapEffect;
 import dev.doctor4t.wathe.index.WatheItems;
-import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.LoreComponent;
 import net.minecraft.item.ItemStack;

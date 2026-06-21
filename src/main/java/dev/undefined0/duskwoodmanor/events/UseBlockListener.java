@@ -1,6 +1,5 @@
 package dev.undefined0.duskwoodmanor.events;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 import dev.undefined0.duskwoodmanor.DuskwoodManor;
