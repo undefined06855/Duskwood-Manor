@@ -2,8 +2,6 @@
 
 - Fix candles ????
 - Resources
-    - Mod logo
-    - Pack logo
     - Inventory splash
 - Start button (knocker)
     - Model
@@ -28,3 +26,5 @@
 - Fix resource pack name lol
 - Resources
     - Title panoramas
+    - Mod logo
+    - Pack logo
