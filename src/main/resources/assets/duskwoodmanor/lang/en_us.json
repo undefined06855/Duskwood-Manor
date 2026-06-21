@@ -3,5 +3,8 @@
 
     "lobby.resource_pack_unloaded.0": "It seems the Duskwood Manor resource pack is not loaded!",
     "lobby.resource_pack_unloaded.1": "Please move it *above* Fabric Mods in your",
-    "lobby.resource_pack_unloaded.2": "Resource Pack settings."
+    "lobby.resource_pack_unloaded.2": "Resource Pack settings.",
+    "lobby.resource_pack_unloaded.3": "",
+    "lobby.resource_pack_unloaded.4": "While you can play like this, some text may be incorrect",
+    "lobby.resource_pack_unloaded.5": "or not show up at all."
 }

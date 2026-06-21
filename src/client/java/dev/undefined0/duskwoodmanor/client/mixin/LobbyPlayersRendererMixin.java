@@ -23,7 +23,7 @@ public class LobbyPlayersRendererMixin {
         if (y == 0) {
             // text at the top, check if resource pack is loaded!!
             if (!Text.translatable("credits.wathe.thank_you").getString().contains("- somewhat_grand")) {
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 6; i++) {
                     Text line = Text.translatable("lobby.resource_pack_unloaded." + i);
                     original.call(instance, textRenderer, line, -textRenderer.getWidth(line) / 2, 40 + (i * 10), 0xFFA81111);
                 }
