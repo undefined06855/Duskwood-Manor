@@ -25,6 +25,8 @@ public class UseBlockListener implements UseBlockCallback {
         var blockData = world.getBlockState(hitResult.getBlockPos());
         var name = blockData.getBlock().getTranslationKey();
 
+        DuskwoodManor.LOGGER.info("right clicked on " + name);
+
         List<TagKey<Block>> whitelistedTags = List.of(
             TagKey.of(RegistryKeys.BLOCK, Identifier.of("minecraft", "doors")),
             TagKey.of(RegistryKeys.BLOCK, Identifier.of("minecraft", "buttons")),
@@ -44,7 +46,6 @@ public class UseBlockListener implements UseBlockCallback {
         }
 
         for (String key : whitelistedKeys) {
-            DuskwoodManor.LOGGER.info("" + name + ", " + key);
             if (name.equals(key)) {
                 return ActionResult.PASS;
             }
