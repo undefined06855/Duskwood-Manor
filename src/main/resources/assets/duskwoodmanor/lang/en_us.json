@@ -1,3 +1,7 @@
 {
-    "resourcepack.duskwoodmanor.default": "Duskwood Manor Resources"
+    "resourcepack.duskwoodmanor.default": "Duskwood Manor Resources",
+
+    "lobby.resource_pack_unloaded.0": "It seems the Duskwood Manor resource pack is not loaded!",
+    "lobby.resource_pack_unloaded.1": "Please move it *above* Fabric Mods in your",
+    "lobby.resource_pack_unloaded.2": "Resource Pack settings."
 }
