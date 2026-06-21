@@ -25,7 +25,7 @@ public class DuskwoodManor implements ModInitializer {
         LOGGER.info("Duskwood Manor by somewhat_grand, mod by undefined0! Have fun!");
 
         var modContainer = FabricLoader.getInstance().getModContainer(MOD_ID).get();
-        var ret = ResourceManagerHelper.registerBuiltinResourcePack(DuskwoodManor.id("duskwood_resources"), modContainer, Text.translatable(MOD_ID, "pack.duskwood_manor"), ResourcePackActivationType.ALWAYS_ENABLED);
+        var ret = ResourceManagerHelper.registerBuiltinResourcePack(DuskwoodManor.id("duskwood_resources"), modContainer, Text.translatable("resourcepack.duskwoodmanor.default"), ResourcePackActivationType.ALWAYS_ENABLED);
         if (!ret) {
             LOGGER.error("Failed to register builtin resource pack! Why? No idea, Fabric won't tell me lmao");
         }

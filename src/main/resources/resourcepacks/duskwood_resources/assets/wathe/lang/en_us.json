@@ -53,5 +53,9 @@
     "tip.letter.tooltip3": "Your room is %s",
     "tip.letter.tooltip2": "La Sirène wishes you a pleasant and safe stay.",
 
-    "credits.wathe.thank_you": "Thank you for playing The Last Voyage of the Harpy Express!\nMe and my team spent a lot of time working\non this mod and we hope you enjoy it.\nIf you do and wish to make a video or stream\nplease make sure to credit my channel,\nvideo and the mod page!\n - RAT / doctor4t\n \nI appreciate you spending the time to play and\nexplore my map, hope you enjoy!\n- somewhat_grand"
+    "credits.wathe.thank_you": "Thank you for playing The Last Voyage of the Harpy Express!\nMe and my team spent a lot of time working\non this mod and we hope you enjoy it.\nIf you do and wish to make a video or stream\nplease make sure to credit my channel,\nvideo and the mod page!\n - RAT / doctor4t\n \nI appreciate you spending the time to play and\nexplore my map, hope you enjoy!\n- somewhat_grand",
+
+    "lobby.resource_pack_unloaded.0": "It seems the Duskwood Manor resource pack is not loaded!",
+    "lobby.resource_pack_unloaded.1": "Please move it *above* Fabric Mods in your",
+    "lobby.resource_pack_unloaded.2": "Resource Pack settings."
 }
