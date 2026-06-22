@@ -11,7 +11,7 @@ public class ManorMapEffects {
     public static final Identifier LOBBY_ID = DuskwoodManor.id("lobby");
 
     public static final MapEffect MANOR = registerMapEffect(MANOR_ID, new ManorMapEffect(MANOR_ID));
-    public static final MapEffect LOBBY = registerMapEffect(LOBBY_ID, new ManorMapEffect(LOBBY_ID));
+    public static final MapEffect LOBBY = registerMapEffect(LOBBY_ID, new ManorLobbyMapEffect(LOBBY_ID));
 
     public static MapEffect registerMapEffect(Identifier identifier, MapEffect mapEffect) {
         DuskwoodManor.LOGGER.info("Registering map effect {}", identifier);
