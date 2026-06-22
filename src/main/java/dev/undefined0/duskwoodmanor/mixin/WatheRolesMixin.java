@@ -12,7 +12,7 @@ import dev.doctor4t.wathe.game.GameConstants;
 
 @Mixin(WatheRoles.class)
 public class WatheRolesMixin {
-    @Inject(method = "registerRole", at = @At(value = "HEAD"))
+    @Inject(method = "registerRole", at = @At("HEAD"))
     private static Role registerRole(Role role, CallbackInfoReturnable<Role> ci) {
         var accessor = ((WatheRoleAccessor)(Object)role);
         if (accessor.duskwoodmanor$getIdentifier() == Wathe.id("vigilante")
