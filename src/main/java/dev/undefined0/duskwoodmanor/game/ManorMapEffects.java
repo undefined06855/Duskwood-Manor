@@ -5,6 +5,7 @@ import dev.doctor4t.wathe.api.WatheMapEffects;
 import net.minecraft.util.Identifier;
 import dev.undefined0.duskwoodmanor.DuskwoodManor;
 import dev.undefined0.duskwoodmanor.game.mapeffect.ManorMapEffect;
+import dev.undefined0.duskwoodmanor.game.mapeffect.ManorLobbyMapEffect;
 
 public class ManorMapEffects {
     public static final Identifier MANOR_ID = DuskwoodManor.id("manor");
