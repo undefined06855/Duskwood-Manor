@@ -6,7 +6,6 @@
 - Final check over strings
 - set up https://duskwoodmanor.undefined0.dev if i have the willingness
 - Modrinth page?
-- Clean up imports
 
 ## Done
 - Rename mansion to manor everywhere
