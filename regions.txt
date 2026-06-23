@@ -1,0 +1,10 @@
+/wathe:mapVariables set playArea -93 -64 151 -472 -24 331
+/wathe:mapVariables set playAreaOffset 385 0 0
+/wathe:mapVariables set resetTemplateArea 184 -64 151 26 -24 331
+/wathe:mapVariables set resetPasteOffset -381 0 0
+/wathe:mapVariables set readyArea -632 -64 115 -677 -40 211
+/wathe:mapVariables set spawnPosition -655 -60 138 0 0
+/wathe:mapVariables set spectatorSpawnPosition -270 -52.00 158 0 0
+/gamerule spawnRadius 0
+/time set 12800
+/wathe:setVisual hud true

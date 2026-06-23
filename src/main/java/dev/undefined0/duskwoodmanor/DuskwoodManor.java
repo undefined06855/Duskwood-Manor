@@ -36,7 +36,7 @@ public class DuskwoodManor implements ModInitializer {
         // but it's nice to have them in their own files and stuff like this
         GameEvents.ON_FINISH_FINALIZE.register(new GameEventsListener());
         GameEvents.ON_FINISH_INITIALIZE.register(new GameEventsListener());
-        UseBlockCallback.EVENT.register(new UseBlockListener());
+        // UseBlockCallback.EVENT.register(new UseBlockListener());
     }
 
     public static Identifier id(String path) {

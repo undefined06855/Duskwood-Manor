@@ -14,6 +14,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
 
+// this is currently unused
+
 public class UseBlockListener implements UseBlockCallback {
     @Override
     public ActionResult interact(PlayerEntity player, World world, Hand hand, BlockHitResult hitResult) {

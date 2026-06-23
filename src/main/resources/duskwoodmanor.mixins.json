@@ -3,6 +3,8 @@
     "package": "dev.undefined0.duskwoodmanor.mixin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [
+        "GameFunctionsMixin",
+        "HornBlockMixin",
         "ShopEntryMixin",
         "TrainWorldComponentMixin",
         "WatheRoleAccessor",

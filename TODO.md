@@ -3,10 +3,6 @@
 - Fix candles ????
 - Resources
     - Inventory splash
-- Start button (knocker)
-    - Model
-    - Sounds
-    - Functionality
 - Final check over strings
 - set up https://duskwoodmanor.undefined0.dev if i have the willingness
 - Upload world file to GitHub
@@ -28,3 +24,7 @@
     - Title panoramas
     - Mod logo
     - Pack logo
+- Start button (knocker)
+    - Model
+    - Sounds
+    - Functionality
