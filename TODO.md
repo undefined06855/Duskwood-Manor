@@ -1,10 +1,9 @@
 # Duskwood Manor To-do List
-
+- Prevent having a bunch of free note 2025s in your inventory
 - Fix candles ????
 - Resources
     - Inventory splash
 - Final check over strings
-- set up https://duskwoodmanor.undefined0.dev if i have the willingness
 - Modrinth page?
 
 ## Done
@@ -26,3 +25,4 @@
     - Model
     - Sounds
     - Functionality
+- set up https://duskwoodmanor.undefined0.dev if i have the willingness
