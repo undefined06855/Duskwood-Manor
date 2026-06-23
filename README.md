@@ -1,10 +1,12 @@
 # Duskwood Manor
+<p align="middle"><img src="manor.png" width=320 alt="A square render of the front door of the mansion, in the same style as the Harpy's Express logo, rendered in Blender." /></p>
+
 A mod for the [Wathe](https://modrinth.com/mod/wathe) map Duskwood Manor by somewhat_grand!
 
-<img src="manor.png" width=320 alt="A square render of the front door of the mansion, in the same style as the Harpy's Express logo, rendered in Blender." />
-
 ## Setup
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+For setup instructions, please see the
+[Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to
+the IDE that you are using.
 
 ## Screenshots
 
@@ -14,3 +16,7 @@ For setup instructions, please see the [Fabric Documentation page](https://docs.
 <p align="middle"><img src="screenshots/2026-06-23_16.44.42.png" width="30%" /><img src="screenshots/2026-06-23_16.45.28.png" width="30%" /><img src="screenshots/2026-06-23_16.45.41.png" width="30%" /></p>
 <p align="middle"><img src="screenshots/2026-06-23_16.46.02.png" width="30%" /><img src="screenshots/2026-06-23_16.46.31.png" width="30%" /><img src="screenshots/2026-06-23_16.47.20.png" width="30%" /></p>
 <p align="middle"><img src="screenshots/2026-06-23_16.47.57.png" width="30%" /><img src="screenshots/2026-06-23_16.49.03.png" width="30%" /><img src="screenshots/2026-06-23_16.50.51.png" width="30%" /></p>
+
+## Contributing
+If you see any *subpar* code in this codebase, please PR to fix it, there's certainly some unfriendly code in here which
+I'm not sure of a better solution for.
