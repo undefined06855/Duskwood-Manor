@@ -36,8 +36,8 @@ public class HornBlockMixin {
         original.call(world, WatheGameModes.MURDER, ManorMapEffects.MANOR, time);
     }
 
-    @WrapOperation(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;DDDLnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V"))
-    private void playSound(World instance, PlayerEntity source, double x, double y, double z, SoundEvent sound, SoundCategory category, float volume, float pitch, Operation<Void> original) {
+    @WrapOperation(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/PlayerEntity;DDDLnet/minecraft/sound/SoundEvent;Lnet/minecraft/sound/SoundCategory;FF)V"))
+    private static void playSound(World instance, PlayerEntity source, double x, double y, double z, SoundEvent sound, SoundCategory category, float volume, float pitch, Operation<Void> original) {
         if (sound != WatheSounds.AMBIENT_TRAIN_HORN) return;
         original.call(instance, source, x, y, z, sound, category, volume, pitch);
     }
