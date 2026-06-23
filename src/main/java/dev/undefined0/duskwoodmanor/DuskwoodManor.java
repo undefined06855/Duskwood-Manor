@@ -1,7 +1,7 @@
 package dev.undefined0.duskwoodmanor;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import dev.doctor4t.wathe.api.event.GameEvents;
 import dev.undefined0.duskwoodmanor.events.GameEventsListener;
-import dev.undefined0.duskwoodmanor.events.UseBlockListener;
+import dev.undefined0.duskwoodmanor.events.ServerTickEventsListener;
 import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
 
 public class DuskwoodManor implements ModInitializer {
@@ -36,6 +36,7 @@ public class DuskwoodManor implements ModInitializer {
         // but it's nice to have them in their own files and stuff like this
         GameEvents.ON_FINISH_FINALIZE.register(new GameEventsListener());
         GameEvents.ON_FINISH_INITIALIZE.register(new GameEventsListener());
+        ServerTickEvents.END_WORLD_TICK.register(new ServerTickEventsListener());
         // UseBlockCallback.EVENT.register(new UseBlockListener());
     }
 
