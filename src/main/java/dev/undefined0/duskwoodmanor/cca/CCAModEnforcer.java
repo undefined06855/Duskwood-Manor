@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 // easy way to force the mod on client and server
 
 public class CCAModEnforcer implements AutoSyncedComponent {
-    public static final ComponentKey<CCAModEnforcer> KEY = ComponentRegistry.getOrCreate(DuskwoodManor.id("really_important_i_promise_v2"), CCAModEnforcer.class);
+    public static final ComponentKey<CCAModEnforcer> KEY = ComponentRegistry.getOrCreate(DuskwoodManor.id("really_important_i_promise_v3"), CCAModEnforcer.class);
     private final World world;
 
     public CCAModEnforcer(World world) {
