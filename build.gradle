@@ -39,6 +39,7 @@ loom {
         }
     }
 
+	accessWidenerPath = file("src/main/resources/duskwoodmanor.accesswidener")
 }
 
 dependencies {

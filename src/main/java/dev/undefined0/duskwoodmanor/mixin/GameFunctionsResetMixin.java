@@ -43,7 +43,7 @@ import net.minecraft.util.math.Vec3d;
 // man do i hate this
 
 @Mixin(GameFunctions.class)
-public class GameFunctionsMixin {
+public class GameFunctionsResetMixin {
     private record BlockEntityInfo(NbtCompound nbt, ComponentMap components) {}
 
     private record BlockInfo(BlockPos pos, BlockState state, BlockEntityInfo blockEntityInfo) {}

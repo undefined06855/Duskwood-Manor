@@ -3,9 +3,14 @@
     "package": "dev.undefined0.duskwoodmanor.client.mixin",
     "compatibilityLevel": "JAVA_21",
     "client": [
+        "AnnounceWelcomePayloadReceiverMixin",
         "HornBlockEntityRendererAccessor",
         "HornBlockEntityRendererMixin",
-        "LobbyPlayersRendererMixin"
+        "LobbyPlayersRendererMixin",
+        "RoleNameRendererMixin",
+        "RoundTextRendererAccessor",
+        "RoundTextRendererMixin",
+        "WatheClientMixin"
     ],
     "injectors": {
         "defaultRequire": 1

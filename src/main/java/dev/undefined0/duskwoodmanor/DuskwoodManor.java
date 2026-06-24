@@ -14,7 +14,9 @@ import org.slf4j.LoggerFactory;
 import dev.doctor4t.wathe.api.event.GameEvents;
 import dev.undefined0.duskwoodmanor.events.GameEventsListener;
 import dev.undefined0.duskwoodmanor.events.ServerTickEventsListener;
+import dev.undefined0.duskwoodmanor.game.ManorGameModes;
 import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
+import dev.undefined0.duskwoodmanor.game.ManorRoles;
 
 public class DuskwoodManor implements ModInitializer {
     public static final String MOD_ID = "duskwoodmanor";
@@ -31,6 +33,8 @@ public class DuskwoodManor implements ModInitializer {
         }
 
         ManorMapEffects.init();
+        ManorRoles.init();
+        ManorGameModes.init();
 
         // im not actually sure this is how you're meant to use events like this? a lambda couldve definitely been used
         // but it's nice to have them in their own files and stuff like this

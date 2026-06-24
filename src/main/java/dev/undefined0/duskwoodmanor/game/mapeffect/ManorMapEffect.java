@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.UnaryOperator;
 
+import dev.doctor4t.wathe.cca.GameWorldComponent;
 import dev.doctor4t.wathe.cca.TrainWorldComponent;
 import dev.doctor4t.wathe.game.mapeffect.HarpyExpressTrainMapEffect;
 import dev.doctor4t.wathe.index.WatheItems;
+import dev.undefined0.duskwoodmanor.ManorUtils;
+import dev.undefined0.duskwoodmanor.game.ManorMapEffects;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.LoreComponent;
 import net.minecraft.item.ItemStack;
@@ -48,28 +51,20 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
 
             letter.set(DataComponentTypes.ITEM_NAME, Text.translatable(letter.getTranslationKey()));
             int letterColor = 0xC5AE8B;
-            String tipString = "tip.letter.";
             letter.apply(DataComponentTypes.LORE, LoreComponent.DEFAULT, component -> {
                 List<Text> text = new ArrayList<>();
                 UnaryOperator<Style> stylizer = style -> style.withItalic(false).withColor(letterColor);
 
-                Text displayName = serverPlayerEntity.getDisplayName();
-                String string = displayName != null ? displayName.getString() : serverPlayerEntity.getName().getString();
-                if (string.charAt(string.length() - 1) == '\uE780') { // remove ratty supporter icon
-                    string = string.substring(0, string.length() - 1);
+                String name = ManorUtils.playerName(serverPlayerEntity);
+                if (name.charAt(name.length() - 1) == '\uE780') { // remove ratty supporter icon
+                    name = name.substring(0, name.length() - 1);
                 }
 
-                text.add(Text.translatable(tipString + "name", string).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
-                text.add(Text.translatable(tipString + "room").styled(stylizer));
-                text.add(Text.translatable(
-                    tipString + "tooltip1",
-                    Text.translatable(tipString + "room." + finalRoomNumber).getString()
-                ).styled(stylizer));
-                text.add(Text.translatable(
-                    tipString + "tooltip3",
-                    Text.translatable(tipString + "room.directions." + finalRoomNumber).getString()
-                ).styled(style -> style.withItalic(true).withColor(0x99876D)));
-                text.add(Text.translatable(tipString + "tooltip2").styled(stylizer));
+                text.add(Text.translatable("tip.letter.name", name).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
+                text.add(Text.translatable("tip.letter.room").styled(stylizer));
+                text.add(Text.translatable("tip.letter.tooltip1", Text.translatable("tip.letter.room." + finalRoomNumber).getString()).styled(stylizer));
+                text.add(Text.translatable("tip.letter.tooltip3", Text.translatable("tip.letter.room.directions." + finalRoomNumber).getString()).styled(style -> style.withItalic(true).withColor(0x99876D)));
+                text.add(Text.translatable("tip.letter.tooltip2").styled(stylizer));
 
                 return new LoreComponent(text);
             });
@@ -81,8 +76,8 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
     @Override
     public void finalizeMapEffects(ServerWorld serverWorld, List<ServerPlayerEntity> players) {
         // switch back to the lobby map effects
-        // GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(serverWorld);
-        // gameWorldComponent.setMapEffect(ManorMapEffects.LOBBY);
-        // gameWorldComponent.getMapEffect().initializeMapEffects(serverWorld, players);
+        GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(serverWorld);
+        gameWorldComponent.setMapEffect(ManorMapEffects.LOBBY);
+        gameWorldComponent.getMapEffect().initializeMapEffects(serverWorld, players);
     }
 }

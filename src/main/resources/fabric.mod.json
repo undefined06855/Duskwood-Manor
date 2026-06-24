@@ -32,9 +32,11 @@
             "environment": "client"
         }
     ],
+	"accessWidener" : "duskwoodmanor.accesswidener",
     "custom": {
         "cardinal-components": [
-            "duskwoodmanor:really_important_i_promise_v3"
+            "duskwoodmanor:really_important_i_promise_v4",
+            "duskwoodmanor:player_hitman_data"
         ]
     },
     "depends": {

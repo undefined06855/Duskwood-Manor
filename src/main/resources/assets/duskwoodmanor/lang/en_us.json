@@ -6,5 +6,28 @@
     "lobby.resource_pack_unloaded.2": "Resource Pack settings.",
     "lobby.resource_pack_unloaded.3": "",
     "lobby.resource_pack_unloaded.4": "While you can play like this, some text may be incorrect",
-    "lobby.resource_pack_unloaded.5": "or not show up at all."
+    "lobby.resource_pack_unloaded.5": "or not show up at all.",
+
+    "announcement.hitman.welcome": "Welcome in, Hitman.",
+    "announcement.hitman.premise.0": "Your task is to eliminate %s.",
+    "announcement.hitman.premise.1": "But you also have %s coming to eliminate you.",
+    "announcement.hitman.premise.2": "Good luck, Agent.",
+
+    "announcement.win.hitman": "%s Wins!",
+    "game.win.hitman_elimination": "By eliminating %s and avoiding %s.",
+
+    "tip.letter.hitman.1": "Your target is %s. Eliminate them in any way possible.",
+    "tip.letter.hitman.2": "%s has you as their target, and will be trying to eliminate you.",
+    "tip.letter.hitman.3": "Hold Alt to see where %s is, but remember, %s can do the same for you.",
+    "tip.letter.hitman.4": "Good luck, Agent.",
+
+    "tip.hitman.incorrect_target": "%s was not your target!",
+    "tip.hitman.target_down_indirect": "Your target is dead from their own actions. Now, survive.",
+    "tip.hitman.target_down": "Target down. Well done, %s. Now, just survive.",
+    "tip.hitman.hunter_down_indirect": "Your assassin died from their own actions. Now anyone can kill you - focus on the task.",
+    "tip.hitman.hunter_down": "Well done for killing your assassin, %s. Now anyone can kill you - focus on the task.",
+    "tip.hitman.no_hunter": "Well done, %s had no assassin.",
+
+    "game.tip.hitman.target": "Target",
+    "game.tip.hitman.hunter": "Assassin"
 }
