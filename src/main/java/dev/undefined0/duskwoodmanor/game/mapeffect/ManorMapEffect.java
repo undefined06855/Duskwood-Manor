@@ -50,30 +50,29 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
             int letterColor = 0xC5AE8B;
             String tipString = "tip.letter.";
             letter.apply(DataComponentTypes.LORE, LoreComponent.DEFAULT, component -> {
-                        List<Text> text = new ArrayList<>();
-                        UnaryOperator<Style> stylizer = style -> style.withItalic(false).withColor(letterColor);
+                List<Text> text = new ArrayList<>();
+                UnaryOperator<Style> stylizer = style -> style.withItalic(false).withColor(letterColor);
 
-                        Text displayName = serverPlayerEntity.getDisplayName();
-                        String string = displayName != null ? displayName.getString() : serverPlayerEntity.getName().getString();
-                        if (string.charAt(string.length() - 1) == '\uE780') { // remove ratty supporter icon
-                            string = string.substring(0, string.length() - 1);
-                        }
+                Text displayName = serverPlayerEntity.getDisplayName();
+                String string = displayName != null ? displayName.getString() : serverPlayerEntity.getName().getString();
+                if (string.charAt(string.length() - 1) == '\uE780') { // remove ratty supporter icon
+                    string = string.substring(0, string.length() - 1);
+                }
 
-                        text.add(Text.translatable(tipString + "name", string).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
-                        text.add(Text.translatable(tipString + "room").styled(stylizer));
-                        text.add(Text.translatable(
-                            tipString + "tooltip1",
-                            Text.translatable(tipString + "room." + finalRoomNumber).getString()
-                        ).styled(stylizer));
-                        text.add(Text.translatable(
-                            tipString + "tooltip3",
-                            Text.translatable(tipString + "room.directions." + finalRoomNumber).getString()
-                        ).styled(style -> style.withItalic(true).withColor(0x99876D)));
-                        text.add(Text.translatable(tipString + "tooltip2").styled(stylizer));
+                text.add(Text.translatable(tipString + "name", string).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
+                text.add(Text.translatable(tipString + "room").styled(stylizer));
+                text.add(Text.translatable(
+                    tipString + "tooltip1",
+                    Text.translatable(tipString + "room." + finalRoomNumber).getString()
+                ).styled(stylizer));
+                text.add(Text.translatable(
+                    tipString + "tooltip3",
+                    Text.translatable(tipString + "room.directions." + finalRoomNumber).getString()
+                ).styled(style -> style.withItalic(true).withColor(0x99876D)));
+                text.add(Text.translatable(tipString + "tooltip2").styled(stylizer));
 
-                        return new LoreComponent(text);
-                    }
-            );
+                return new LoreComponent(text);
+            });
 
             serverPlayerEntity.giveItemStack(letter);
         }
