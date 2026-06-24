@@ -1,5 +1,6 @@
 package dev.undefined0.duskwoodmanor.mixin;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -48,81 +49,62 @@ public class GameFunctionsResetMixin {
 
     private record BlockInfo(BlockPos pos, BlockState state, BlockEntityInfo blockEntityInfo) {}
 
-    // tldr the orig wathe one SUCKS and takes a crazy amount of time on a map this large so i (gpt) rewrote it which i
-    // feel so so bad about and im so sorry but i will rewrite this by hand eventually
     @SuppressWarnings("deprecation")
     private static boolean origWatheTryResetTrain(ServerWorld serverWorld) {
         if (serverWorld.getServer().getOverworld().equals(serverWorld)) {
             MapVariablesWorldComponent areas = MapVariablesWorldComponent.KEY.get(serverWorld);
+            var resetPasteOffset = areas.getResetPasteOffset();
             BlockPos backupMinPos = BlockPos.ofFloored(areas.getResetTemplateArea().getMinPos());
             BlockPos backupMaxPos = BlockPos.ofFloored(areas.getResetTemplateArea().getMaxPos());
             BlockBox backupTrainBox = BlockBox.create(backupMinPos, backupMaxPos);
-            BlockPos trainMinPos = BlockPos.ofFloored(areas.getResetTemplateArea().offset(Vec3d.of(areas.getResetPasteOffset())).getMinPos());
+            BlockPos trainMinPos = BlockPos.ofFloored(areas.getResetTemplateArea().offset(Vec3d.of(resetPasteOffset)).getMinPos());
             BlockPos trainMaxPos = trainMinPos.add(backupTrainBox.getDimensions());
-            BlockBox trainBox = BlockBox.create(trainMinPos, trainMaxPos);
 
             if (serverWorld.isRegionLoaded(backupMinPos, backupMaxPos) && serverWorld.isRegionLoaded(trainMinPos, trainMaxPos)) {
                 int volume = backupTrainBox.getBlockCountX() * backupTrainBox.getBlockCountY() * backupTrainBox.getBlockCountZ();
-                List<BlockInfo> list = Lists.newArrayListWithCapacity(volume);
-                List<BlockInfo> list2 = Lists.newArrayListWithCapacity(volume);
-                List<BlockInfo> list3 = Lists.newArrayListWithCapacity(volume);
-                BlockPos blockPos5 = new BlockPos(
-                    trainBox.getMinX() - backupTrainBox.getMinX(), trainBox.getMinY() - backupTrainBox.getMinY(), trainBox.getMinZ() - backupTrainBox.getMinZ()
-                );
-                Mutable backupPos = new BlockPos.Mutable();
-                Mutable targetPos = new BlockPos.Mutable();
+                var blockEntities = new ArrayList<BlockInfo>(volume);
+                var blocks = new ArrayList<BlockInfo>(volume);
+                var blocksThatNeedShit = new ArrayList<BlockInfo>(volume);
 
-                for (int k = backupTrainBox.getMinZ(); k <= backupTrainBox.getMaxZ(); k++) {
-                    for (int l = backupTrainBox.getMinY(); l <= backupTrainBox.getMaxY(); l++) {
-                        for (int m = backupTrainBox.getMinX(); m <= backupTrainBox.getMaxX(); m++) {
-                            backupPos.set(m, l, k);
-                            targetPos.set(m + blockPos5.getX(), l + blockPos5.getY(), k + blockPos5.getZ());
+                for (int z = backupTrainBox.getMinZ(); z <= backupTrainBox.getMaxZ(); z++) {
+                    for (int y = backupTrainBox.getMinY(); y <= backupTrainBox.getMaxY(); y++) {
+                        for (int x = backupTrainBox.getMinX(); x <= backupTrainBox.getMaxX(); x++) {
+                            var backupPos = new BlockPos(x, y, z);
+                            var targetPos = new BlockPos(x, y, z).add(resetPasteOffset);
                             BlockState blockState = serverWorld.getBlockState(backupPos);
-
                             BlockEntity blockEntity = serverWorld.getBlockEntity(backupPos);
+
                             if (blockEntity != null) {
-                                BlockEntityInfo blockEntityInfo = new BlockEntityInfo(
-                                    blockEntity.createComponentlessNbt(serverWorld.getRegistryManager()), blockEntity.getComponents()
-                                );
-                                list2.add(new BlockInfo(targetPos.toImmutable(), blockState, blockEntityInfo));
+                                // block entities
+                                BlockEntityInfo blockEntityInfo = new BlockEntityInfo(blockEntity.createComponentlessNbt(serverWorld.getRegistryManager()), blockEntity.getComponents());
+                                blockEntities.add(new BlockInfo(targetPos, blockState, blockEntityInfo));
                             } else if (!blockState.isOpaqueFullCube(serverWorld, backupPos) && !blockState.isFullCube(serverWorld, backupPos)) {
-                                list3.add(new BlockInfo(targetPos.toImmutable(), blockState, null));
+                                // blocks that need to be placed on other blocks etc
+                                blocksThatNeedShit.add(new BlockInfo(targetPos, blockState, null));
                             } else {
-                                list.add(new BlockInfo(targetPos.toImmutable(), blockState, null));
+                                // normal stuff
+                                blocks.add(new BlockInfo(targetPos, blockState, null));
                             }
                         }
                     }
                 }
 
-                List<BlockInfo> list4 = Lists.newArrayListWithCapacity(list.size() + list2.size() + list3.size());
-                list4.addAll(list);
-                list4.addAll(list2);
-                list4.addAll(list3);
+                for (BlockInfo block : blocks) { serverWorld.setBlockState(block.pos, block.state, Block.NOTIFY_LISTENERS); }
+                for (BlockInfo block : blockEntities) { serverWorld.setBlockState(block.pos, block.state, Block.NOTIFY_LISTENERS); }
+                for (BlockInfo block : blocksThatNeedShit) { serverWorld.setBlockState(block.pos, block.state, Block.NOTIFY_LISTENERS); }
 
-                int mx = 0;
-
-                for (BlockInfo blockInfo2 : list4) {
-                    if (serverWorld.setBlockState(blockInfo2.pos, blockInfo2.state, Block.NOTIFY_LISTENERS)) {
-                        mx++;
-                    }
-                }
-
-                for (BlockInfo blockInfo2x : list2) {
-                    BlockEntity blockEntity4 = serverWorld.getBlockEntity(blockInfo2x.pos);
-                    if (blockInfo2x.blockEntityInfo != null && blockEntity4 != null) {
-                        blockEntity4.readComponentlessNbt(blockInfo2x.blockEntityInfo.nbt, serverWorld.getRegistryManager());
-                        blockEntity4.setComponents(blockInfo2x.blockEntityInfo.components);
-                        blockEntity4.markDirty();
+                for (BlockInfo block : blockEntities) {
+                        BlockEntity blockEntity = serverWorld.getBlockEntity(block.pos);
+                    if (block.blockEntityInfo != null && blockEntity != null) {
+                        blockEntity.readComponentlessNbt(block.blockEntityInfo.nbt, serverWorld.getRegistryManager());
+                        blockEntity.setComponents(block.blockEntityInfo.components);
+                        blockEntity.markDirty();
                     }
 
-                    serverWorld.setBlockState(blockInfo2x.pos, blockInfo2x.state, Block.NOTIFY_LISTENERS);
+                    serverWorld.setBlockState(block.pos, block.state, Block.NOTIFY_LISTENERS);
                 }
 
-                serverWorld.getBlockTickScheduler().scheduleTicks(serverWorld.getBlockTickScheduler(), backupTrainBox, blockPos5);
-                if (mx == 0) {
-                    Wathe.LOGGER.info("Train reset failed: No blocks copied. Queueing another attempt.");
-                    return true;
-                }
+                serverWorld.getBlockTickScheduler().scheduleTicks(serverWorld.getBlockTickScheduler(), backupTrainBox, resetPasteOffset);
             } else {
                 Wathe.LOGGER.info("Train reset failed: Clone positions not loaded. Queueing another attempt.");
                 return true;

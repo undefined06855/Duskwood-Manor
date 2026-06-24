@@ -6,6 +6,9 @@ import dev.doctor4t.wathe.cca.GameWorldComponent;
 import net.minecraft.world.World;
 
 // doctor4t this is a great mod and i love it but can the time of day system be a LITTLE better??
+// edit: it has now come to my attention my issues with it were because of a typo i made. i am sincerely sorry rat and
+// i hope to amend this by making the mod use less instrusive mixins just kidding im making this mod as intrusive as it
+// needs to be
 public class GameEventsListener implements GameEvents.OnFinishFinalize, GameEvents.OnFinishInitialize {
     @Override
     public void onFinishInitialize(World world, GameWorldComponent gameComponent) {
