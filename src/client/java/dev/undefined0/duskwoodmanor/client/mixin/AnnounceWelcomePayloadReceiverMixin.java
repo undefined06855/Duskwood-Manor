@@ -19,8 +19,6 @@ public class AnnounceWelcomePayloadReceiverMixin {
             return;
         }
 
-        DuskwoodManor.LOGGER.info("announce welcome payload");
-
         RoundTextRendererAccessor.setWelcomeTime(340);
     }
 }
