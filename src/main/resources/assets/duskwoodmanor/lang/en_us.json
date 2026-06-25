@@ -5,8 +5,8 @@
     "lobby.resource_pack_unloaded.1": "Please move it *above* Fabric Mods in your",
     "lobby.resource_pack_unloaded.2": "Resource Pack settings.",
     "lobby.resource_pack_unloaded.3": "",
-    "lobby.resource_pack_unloaded.4": "While you can play like this, some text may be incorrect",
-    "lobby.resource_pack_unloaded.5": "or not show up at all.",
+    "lobby.resource_pack_unloaded.4": "While you can play like this, some text or models may",
+    "lobby.resource_pack_unloaded.5": "be incorrect, or not show up at all.",
 
     "announcement.hitman.welcome": "Welcome in, Hitman.",
     "announcement.hitman.premise.0": "Your task is to eliminate %s.",
