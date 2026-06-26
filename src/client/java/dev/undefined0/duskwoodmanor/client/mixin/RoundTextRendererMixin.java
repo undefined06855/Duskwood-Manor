@@ -29,6 +29,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 // for the record, a lot of this was just copied from wathe
+// im not entirely sure how to rewrite this without using wathe code
 
 @Mixin(RoundTextRenderer.class)
 public class RoundTextRendererMixin {
@@ -105,11 +106,10 @@ public class RoundTextRendererMixin {
                 context.getMatrices().push();
                 context.getMatrices().translate(-20, 3, 0);
                 context.getMatrices().scale(5f, 5f, 1f);
-                float color = 1f;
-                context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 8 / 64f, 16 / 64f, 8 / 64f, 16 / 64f, color, color, color, 1f);
+                context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 8 / 64f, 16 / 64f, 8 / 64f, 16 / 64f, 1f, 1f, 1f, 1f);
                 context.getMatrices().translate(-0.5, -0.5, 0);
                 context.getMatrices().scale(1.125f, 1.125f, 1f);
-                context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 40 / 64f, 48 / 64f, 8 / 64f, 16 / 64f, color, color, color, 1f);
+                context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 40 / 64f, 48 / 64f, 8 / 64f, 16 / 64f, 1f, 1f, 1f, 1f);
                 context.getMatrices().pop();
             }
 

@@ -1,5 +1,7 @@
 package dev.undefined0.duskwoodmanor.client.mixin;
 
+import javax.swing.text.html.parser.Entity;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -26,18 +28,15 @@ public class RoleNameRendererMixin {
         }
 
         var player = MinecraftClient.getInstance().player;
+        var hitman = HitmanDataComponent.KEY.get(player);
         float range = GameFunctions.isPlayerSpectatingOrCreative(player) ? 8f : 2f;
-        if (ProjectileUtil.getCollision(player, entity -> entity instanceof PlayerEntity, range) instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof PlayerEntity target) {
-            var hitman = HitmanDataComponent.KEY.get(player);
 
-            if (hitman.getTarget() == target) {
-                return original.call("game.tip.hitman.target");
-            }
+        var collision = ProjectileUtil.getCollision(player, entity -> entity instanceof PlayerEntity, range);
+        if (!(collision instanceof EntityHitResult)) return original.call(key);
 
-            if (hitman.getHunter() == target) {
-                return original.call("game.tip.hitman.hunter");
-            }
-        }
+        var targetPlayer = (PlayerEntity)((EntityHitResult)collision).getEntity();
+        if (hitman.getTarget() == targetPlayer) return original.call("game.tip.hitman.target");
+        if (hitman.getHunter() == targetPlayer) return original.call("game.tip.hitman.hunter");
 
         return original.call(key);
     }
