@@ -85,18 +85,19 @@ public class RoundTextRendererMixin {
         if (endTime > 0 && endTime < /* END_DURATION */ 200 - (GameConstants.FADE_TIME * 2) && !game.isRunning() && game.getGameMode() != WatheGameModes.DISCOVERY) {
             PlayerEntity winner = player.getWorld().getPlayerByUuid(game.getLooseEndWinner());
             HitmanDataComponent hitmanData = HitmanDataComponent.KEY.get(winner);
-            Text endText = Text.translatable("announcement.win.hitman", ManorUtils.playerName(winner));
+
             matrix.push();
             matrix.translate(context.getScaledWindowWidth() / 2f, context.getScaledWindowHeight() / 2f - 40, 0);
 
             matrix.push();
             matrix.scale(2.6f, 2.6f, 1f);
+            Text endText = Text.translatable("announcement.win.hitman", ManorUtils.playerName(winner));
             context.drawTextWithShadow(renderer, endText, -renderer.getWidth(endText) / 2, -17, 0xd14213);
             matrix.pop();
             matrix.push();
             matrix.scale(1.2f, 1.2f, 1f);
             MutableText winMessage = Text.translatable("game.win.hitman_elimination", ManorUtils.playerName(hitmanData.getTarget()), ManorUtils.playerName(hitmanData.getHunter()));
-            context.drawTextWithShadow(renderer, winMessage, -renderer.getWidth(winMessage) / 2, -15, 0xB3350B);
+            context.drawTextWithShadow(renderer, winMessage, -renderer.getWidth(winMessage) / 2, -12, 0xB3350B);
             matrix.pop();
 
             PlayerListEntry playerEntry = WatheClient.PLAYER_ENTRIES_CACHE.get(winner.getUuid());
