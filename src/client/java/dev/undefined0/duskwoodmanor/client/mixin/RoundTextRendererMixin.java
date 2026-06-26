@@ -42,39 +42,40 @@ public class RoundTextRendererMixin {
         int welcomeTime = RoundTextRendererAccessor.getWelcomeTime();
         int endTime = RoundTextRendererAccessor.getEndTime();
         var component = HitmanDataComponent.KEY.get(player);
+        var matrix = context.getMatrices();
 
         if (welcomeTime > 0) {
-            context.getMatrices().push();
-            context.getMatrices().translate(context.getScaledWindowWidth() / 2f, context.getScaledWindowHeight() / 2f + 3.5, 0);
-            context.getMatrices().push();
-            context.getMatrices().scale(2.6f, 2.6f, 1f);
+            matrix.push();
+            matrix.translate(context.getScaledWindowWidth() / 2f, context.getScaledWindowHeight() / 2f + 3.5, 0);
+            matrix.push();
+            matrix.scale(2.6f, 2.6f, 1f);
             if (welcomeTime <= 240) {
                 Text welcomeText = Text.translatable("announcement.hitman.welcome");
                 context.drawTextWithShadow(renderer, welcomeText, -renderer.getWidth(welcomeText) / 2, -12, 0xB3350B);
             }
-            context.getMatrices().pop();
-            context.getMatrices().push();
-            context.getMatrices().scale(1.2f, 1.2f, 1f);
+            matrix.pop();
+            matrix.push();
+            matrix.scale(1.2f, 1.2f, 1f);
             if (welcomeTime <= 180) {
                 Text premiseText = Text.translatable("announcement.hitman.premise.0", ManorUtils.playerName(component.getTarget()));
                 context.drawTextWithShadow(renderer, premiseText, -renderer.getWidth(premiseText) / 2, 0, 0xB3350B);
             }
-            context.getMatrices().pop();
-            context.getMatrices().push();
-            context.getMatrices().scale(1.2f, 1.2f, 1f);
+            matrix.pop();
+            matrix.push();
+            matrix.scale(1.2f, 1.2f, 1f);
             if (welcomeTime <= 120) {
                 Text goalText = Text.translatable("announcement.hitman.premise.1", ManorUtils.playerName(component.getHunter()));
                 context.drawTextWithShadow(renderer, goalText, -renderer.getWidth(goalText) / 2, 14, 0xB3350B);
             }
-            context.getMatrices().pop();
-            context.getMatrices().push();
-            context.getMatrices().scale(1f, 1f, 1f);
+            matrix.pop();
+            matrix.push();
+            matrix.scale(1f, 1f, 1f);
             if (welcomeTime <= 60) {
                 Text goalText = Text.translatable("announcement.hitman.premise.2");
                 context.drawTextWithShadow(renderer, goalText, -renderer.getWidth(goalText) / 2, 32, 0xB3350B);
             }
-            context.getMatrices().pop();
-            context.getMatrices().pop();
+            matrix.pop();
+            matrix.pop();
         }
 
 
@@ -85,34 +86,34 @@ public class RoundTextRendererMixin {
             PlayerEntity winner = player.getWorld().getPlayerByUuid(game.getLooseEndWinner());
             HitmanDataComponent hitmanData = HitmanDataComponent.KEY.get(winner);
             Text endText = Text.translatable("announcement.win.hitman", ManorUtils.playerName(winner));
-            context.getMatrices().push();
-            context.getMatrices().translate(context.getScaledWindowWidth() / 2f, context.getScaledWindowHeight() / 2f - 40, 0);
+            matrix.push();
+            matrix.translate(context.getScaledWindowWidth() / 2f, context.getScaledWindowHeight() / 2f - 40, 0);
 
-            context.getMatrices().push();
-            context.getMatrices().scale(2.6f, 2.6f, 1f);
+            matrix.push();
+            matrix.scale(2.6f, 2.6f, 1f);
             context.drawTextWithShadow(renderer, endText, -renderer.getWidth(endText) / 2, -17, 0xd14213);
-            context.getMatrices().pop();
-            context.getMatrices().push();
-            context.getMatrices().scale(1.2f, 1.2f, 1f);
+            matrix.pop();
+            matrix.push();
+            matrix.scale(1.2f, 1.2f, 1f);
             MutableText winMessage = Text.translatable("game.win.hitman_elimination", ManorUtils.playerName(hitmanData.getTarget()), ManorUtils.playerName(hitmanData.getHunter()));
-            context.drawTextWithShadow(renderer, winMessage, -renderer.getWidth(winMessage) / 2, -12, 0xB3350B);
-            context.getMatrices().pop();
+            context.drawTextWithShadow(renderer, winMessage, -renderer.getWidth(winMessage) / 2, -15, 0xB3350B);
+            matrix.pop();
 
             PlayerListEntry playerEntry = WatheClient.PLAYER_ENTRIES_CACHE.get(winner.getUuid());
             if (playerEntry != null && playerEntry.getSkinTextures().texture() != null) {
                 Identifier texture = playerEntry.getSkinTextures().texture();
                 RenderSystem.enableBlend();
-                context.getMatrices().push();
-                context.getMatrices().translate(-20, 3, 0);
-                context.getMatrices().scale(5f, 5f, 1f);
+                matrix.push();
+                matrix.translate(-20, 3, 0);
+                matrix.scale(5f, 5f, 1f);
                 context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 8 / 64f, 16 / 64f, 8 / 64f, 16 / 64f, 1f, 1f, 1f, 1f);
-                context.getMatrices().translate(-0.5, -0.5, 0);
-                context.getMatrices().scale(1.125f, 1.125f, 1f);
+                matrix.translate(-0.5, -0.5, 0);
+                matrix.scale(1.125f, 1.125f, 1f);
                 context.drawTexturedQuad(texture, 0, 8, 0, 8, 0, 40 / 64f, 48 / 64f, 8 / 64f, 16 / 64f, 1f, 1f, 1f, 1f);
-                context.getMatrices().pop();
+                matrix.pop();
             }
 
-            context.getMatrices().pop();
+            matrix.pop();
         }
     }
 
