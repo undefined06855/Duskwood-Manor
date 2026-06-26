@@ -1,7 +1,5 @@
 package dev.undefined0.duskwoodmanor.client.mixin;
 
-import javax.swing.text.html.parser.Entity;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
