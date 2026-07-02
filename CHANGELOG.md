@@ -1,4 +1,7 @@
 # Duskwood Manor Changelog
+## v1.1.2
+- Fixed a crash on startup because I forgot to test v1.1.1
+
 ## v1.1.1
 - Removed as much as Wathe code as possible from the codebase
 - Shuffled around some internals
