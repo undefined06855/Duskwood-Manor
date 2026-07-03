@@ -1,4 +1,8 @@
 # Duskwood Manor Changelog
+## v1.1.3
+- Fixed a crash if the last gamemode was Hitman but there was no winner
+- Disallowed starting a game of Hitman if there are less than four players present
+
 ## v1.1.2
 - Fixed a crash on startup because I forgot to test v1.1.1
 

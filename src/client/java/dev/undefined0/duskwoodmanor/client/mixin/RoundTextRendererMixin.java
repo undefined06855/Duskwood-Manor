@@ -157,6 +157,10 @@ public class RoundTextRendererMixin {
         }
 
         GameWorldComponent game = GameWorldComponent.KEY.get(player.getWorld());
+        if (game.getLooseEndWinner() == null) {
+            return;
+        }
+
         PlayerEntity winner = player.getWorld().getPlayerByUuid(game.getLooseEndWinner());
 
         if (endTime > 0) {

@@ -51,6 +51,14 @@ public class HitmanGameMode extends GameMode {
 
     @Override
     public void initializeGame(ServerWorld serverWorld, GameWorldComponent gameWorldComponent, List<ServerPlayerEntity> players) {
+        // technically should never hit but idk apparently some people are?
+        if (players.size() < 4) {
+            DuskwoodManor.LOGGER.error("less than four players?");
+            GameRoundEndComponent.KEY.get(serverWorld).setRoundEndData(serverWorld.getPlayers(), WinStatus.NONE);
+            GameFunctions.stopGame(serverWorld);
+            return;
+        }
+
         var agents = sortOutAgents(players, serverWorld);
         if (agents.size() == 0) {
             DuskwoodManor.LOGGER.error("Failed to sort out hitman info!!!");
