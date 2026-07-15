@@ -5,6 +5,8 @@ A mod for the [Wathe](https://modrinth.com/mod/wathe) map Duskwood Manor by some
 well as a new gamemode - Hitman. Start the default Murder gamemode by knocking on the door, and start a game of Hitman
 by using the `/wathe:start` command!
 
+Join the Discord at https://discord.gg/vvgf9By77!
+
 ## Setup
 For setup instructions, please see the
 [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to
