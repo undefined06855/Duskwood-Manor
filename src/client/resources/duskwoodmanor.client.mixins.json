@@ -9,7 +9,8 @@
         "RoleNameRendererMixin",
         "RoundTextRendererAccessor",
         "RoundTextRendererMixin",
-        "WatheClientMixin"
+        "WatheClientMixin",
+        "WatheConfigMixin"
     ],
     "injectors": {
         "defaultRequire": 1
