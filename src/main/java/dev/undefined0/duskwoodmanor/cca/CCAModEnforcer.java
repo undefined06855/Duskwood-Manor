@@ -10,7 +10,7 @@ import net.minecraft.registry.RegistryWrapper.WrapperLookup;
 import net.minecraft.world.World;
 
 // easy way to force the mod on client and server
-
+// IF YOU UPDATE IT HERE MAKE SURE TO UPDATE IT IN THE JSON!!!!! YOU KEEP FORGETTING!!!!! STOP DOING THAT!!!!
 public class CCAModEnforcer implements AutoSyncedComponent {
     public static final ComponentKey<CCAModEnforcer> KEY = ComponentRegistry.getOrCreate(DuskwoodManor.id("really_important_i_promise_v6"), CCAModEnforcer.class);
 
