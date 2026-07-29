@@ -12,7 +12,6 @@ import dev.doctor4t.wathe.client.WatheClient;
 import dev.doctor4t.wathe.client.gui.RoundTextRenderer;
 import dev.doctor4t.wathe.game.GameConstants;
 import dev.doctor4t.wathe.index.WatheSounds;
-import dev.undefined0.duskwoodmanor.DuskwoodManor;
 import dev.undefined0.duskwoodmanor.ManorUtils;
 import dev.undefined0.duskwoodmanor.cca.HitmanDataComponent;
 import dev.undefined0.duskwoodmanor.game.ManorGameModes;
