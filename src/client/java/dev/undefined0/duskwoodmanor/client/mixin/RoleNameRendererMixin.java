@@ -36,6 +36,11 @@ public class RoleNameRendererMixin {
         if (hitman.getTarget() == targetPlayer) return original.call("game.tip.hitman.target");
         if (hitman.getHunter() == targetPlayer) return original.call("game.tip.hitman.hunter");
 
-        return original.call(key);
+        var targetComponent = HitmanDataComponent.KEY.get(targetPlayer);
+        if (GameFunctions.isPlayerEliminated(targetComponent.getHunter())) {
+            return original.call("game.tip.hitman.vulnerable");
+        }
+
+        return original.call("game.tip.hitman.blank");
     }
 }

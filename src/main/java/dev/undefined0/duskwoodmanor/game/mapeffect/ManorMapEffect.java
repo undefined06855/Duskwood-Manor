@@ -62,8 +62,8 @@ public class ManorMapEffect extends HarpyExpressTrainMapEffect {
 
                 text.add(Text.translatable("tip.letter.name", name).styled(style -> style.withItalic(false).withColor(0xFFFFFF)));
                 text.add(Text.translatable("tip.letter.room").styled(stylizer));
-                text.add(Text.translatable("tip.letter.tooltip1", Text.translatable("tip.letter.room." + finalRoomNumber).getString()).styled(stylizer));
-                text.add(Text.translatable("tip.letter.tooltip3", Text.translatable("tip.letter.room.directions." + finalRoomNumber).getString()).styled(style -> style.withItalic(true).withColor(0x99876D)));
+                text.add(Text.translatable("tip.letter.tooltip1", Text.translatable("tip.letter.room." + finalRoomNumber)).styled(stylizer));
+                text.add(Text.translatable("tip.letter.tooltip3", Text.translatable("tip.letter.room.directions." + finalRoomNumber)).styled(style -> style.withItalic(true).withColor(0x99876D)));
                 text.add(Text.translatable("tip.letter.tooltip2").styled(stylizer));
 
                 return new LoreComponent(text);

@@ -1,6 +1,7 @@
 package dev.undefined0.duskwoodmanor.game.gamemode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -43,8 +44,9 @@ public class HitmanGameMode extends GameMode {
         public PlayerEntity target;
         public PlayerEntity hunter;
 
-        public HitmanInfo(PlayerEntity player, PlayerEntity target) {
+        public HitmanInfo(PlayerEntity hunter, PlayerEntity player, PlayerEntity target) {
             this.player = player;
+            this.hunter = hunter;
             this.target = target;
         }
     }
@@ -116,41 +118,31 @@ public class HitmanGameMode extends GameMode {
     }
 
     private List<HitmanInfo> sortOutAgents(List<ServerPlayerEntity> players, ServerWorld serverWorld) {
-        int iterations = 0;
+        var ret = new ArrayList<HitmanInfo>(players.size());
 
-        // wow java has labelled loops this is nice
-        outer:
-        while (iterations < 30) {
-            iterations++;
-
-            var ret = new ArrayList<HitmanInfo>(players.size());
-            var remainingTargets = new ArrayList<ServerPlayerEntity>(players);
-
-            for (ServerPlayerEntity player : players) {
-                if (remainingTargets.size() == 1 && remainingTargets.getFirst() == player) {
-                    continue outer;
-                }
-
-                ServerPlayerEntity target;
-                do {
-                    target = remainingTargets.get(serverWorld.getRandom().nextInt(remainingTargets.size()));
-                } while (target == player);
-
-                remainingTargets.remove(target);
-
-                ret.add(new HitmanInfo(player, target));
-            }
-
-            // fill out hunters
-            for (HitmanInfo info : ret) {
-                info.hunter = ret.stream().filter(a -> a.target == info.player).findFirst().get().player;
-                DuskwoodManor.LOGGER.info("{} -> {} -> {}", ManorUtils.playerName(info.hunter), ManorUtils.playerName(info.player), ManorUtils.playerName(info.target));
-            }
-
-            return ret;
+        List<ServerPlayerEntity> shuffled = new ArrayList<>(players);
+        for (int i = shuffled.size() - 1; i > 0; i--) {
+            int j = serverWorld.getRandom().nextInt(i + 1);
+            Collections.swap(shuffled, i, j);
         }
 
-        return new ArrayList<>();
+        for (int i = 0; i < shuffled.size(); i++) {
+            ServerPlayerEntity prev;
+            ServerPlayerEntity cur;
+            ServerPlayerEntity next;
+
+            if (i == 0) prev = shuffled.get(shuffled.size() - 1);
+            else prev = shuffled.get(i - 1);
+
+            if (i == shuffled.size() - 1) next = shuffled.get(0);
+            else next = shuffled.get(i + 1);
+
+            cur = shuffled.get(i);
+
+            ret.add(new HitmanInfo(prev, cur, next));
+        }
+
+        return ret;
     }
 
     Function<Long, Integer> HITMAN_PASSIVE_MONEY_TICKER = time -> {

@@ -12,6 +12,7 @@ import dev.doctor4t.wathe.client.WatheClient;
 import dev.doctor4t.wathe.client.gui.RoundTextRenderer;
 import dev.doctor4t.wathe.game.GameConstants;
 import dev.doctor4t.wathe.index.WatheSounds;
+import dev.undefined0.duskwoodmanor.DuskwoodManor;
 import dev.undefined0.duskwoodmanor.ManorUtils;
 import dev.undefined0.duskwoodmanor.cca.HitmanDataComponent;
 import dev.undefined0.duskwoodmanor.game.ManorGameModes;
@@ -120,14 +121,18 @@ public class RoundTextRendererMixin {
 
     @WrapMethod(method = "tick")
     private static void tick(Operation<Void> original) {
+        DuskwoodManor.LOGGER.info("prev12");
+
         var player = MinecraftClient.getInstance().player;
         if (player == null || GameWorldComponent.KEY.get(player.getWorld()).getGameMode() != ManorGameModes.HITMAN) {
             original.call();
             return;
         }
 
+
         int welcomeTime = RoundTextRendererAccessor.getWelcomeTime();
         int endTime = RoundTextRendererAccessor.getEndTime();
+        DuskwoodManor.LOGGER.info("yeah2 {} {}", welcomeTime, endTime);
 
         if (welcomeTime > 0) {
             if (player != null) {
@@ -156,6 +161,8 @@ public class RoundTextRendererMixin {
             welcomeTime--;
         }
 
+        RoundTextRendererAccessor.setWelcomeTime(welcomeTime);
+
         GameWorldComponent game = GameWorldComponent.KEY.get(player.getWorld());
         if (game.getLooseEndWinner() == null) {
             return;
@@ -175,8 +182,6 @@ public class RoundTextRendererMixin {
 
         GameOptions options = MinecraftClient.getInstance().options;
         if (options != null && options.playerListKey.isPressed()) endTime = Math.max(2, endTime);
-
-        RoundTextRendererAccessor.setWelcomeTime(welcomeTime);
         RoundTextRendererAccessor.setEndTime(endTime);
     }
 

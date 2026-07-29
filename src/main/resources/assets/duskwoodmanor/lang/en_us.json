@@ -29,5 +29,7 @@
     "tip.hitman.no_hunter": "Well done, %s had no assassin.",
 
     "game.tip.hitman.target": "Target",
-    "game.tip.hitman.hunter": "Assassin"
+    "game.tip.hitman.hunter": "Assassin",
+    "game.tip.hitman.vulnerable": "Vulnerable",
+    "game.tip.hitman.blank": ""
 }
