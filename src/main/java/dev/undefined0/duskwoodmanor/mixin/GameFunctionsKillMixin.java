@@ -58,8 +58,8 @@ public class GameFunctionsKillMixin {
 
             killer.sendMessage(Text.translatable("tip.hitman.hunter_down", ManorUtils.playerName(killer)).withColor(lightRed));
             victimComponent.getHunter().sendMessage(Text.translatable("tip.hitman.victim_down_indirect").withColor(darkGreen));
-        } else if (GameFunctions.isPlayerEliminated(killerComponent.getHunter())) {
-            // killed someone with no hunder
+        } else if (GameFunctions.isPlayerEliminated(victimComponent.getHunter())) {
+            // killed someone with no hunter
             original.call(victim, spawnBody, killer, deathReason);
 
             killer.sendMessage(Text.translatable("tip.hitman.no_hunter", ManorUtils.playerName(victim)).withColor(lightGreen));

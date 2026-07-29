@@ -3,6 +3,7 @@
 - Fixed hover tooltip showing "Killer Cohort" for every player in Hitman
 - Fixed instinct highight not working in spectator mode in Hitman
 - Fixed killer and target distribution to be 100% successful and not use a loop in Hitman
+- Fixed not being able to kill someone if they have no hunter in Hitman
 - Fixed letter tooltips showing as non-translated when playing on a dedicated server
 - Fixed non-American English languages not having correctly overridden resources
 - Added instinct highlight and tooltip for people with no hunter in Hitman
