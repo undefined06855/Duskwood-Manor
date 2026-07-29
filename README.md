@@ -12,6 +12,9 @@ For setup instructions, please see the
 [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to
 the IDE that you are using.
 
+**WINDOWS DEVELOPERS** you *MUST* enable either Developer Options in Windows settings (easiest) or run `git` as
+Administrator (ridiculous) for the symlinks in this repo to be properly copied by git.
+
 ## Screenshots
 
 <img src="screenshots/overhead.png" alt="A bird's eye view of the mansion, where you can see the fountain, the mansion, the trees surrounding it, and the hedge maze behind it, taken at sunset." />
@@ -24,3 +27,10 @@ the IDE that you are using.
 ## Contributing
 If you see any *subpar* code in this codebase, please PR to fix it, there's certainly some unfriendly code in here which
 I'm not sure of a better solution for.
+
+No AI code though!
+
+## Credits
+- Somewhat Grand for the map!
+- [dank_meme](https://github.com/dankmeme01/) for the translation of one language key into Russian
+- That one guy who made an AI pull request on this repository
