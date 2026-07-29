@@ -121,8 +121,6 @@ public class RoundTextRendererMixin {
 
     @WrapMethod(method = "tick")
     private static void tick(Operation<Void> original) {
-        DuskwoodManor.LOGGER.info("prev12");
-
         var player = MinecraftClient.getInstance().player;
         if (player == null || GameWorldComponent.KEY.get(player.getWorld()).getGameMode() != ManorGameModes.HITMAN) {
             original.call();
@@ -132,7 +130,6 @@ public class RoundTextRendererMixin {
 
         int welcomeTime = RoundTextRendererAccessor.getWelcomeTime();
         int endTime = RoundTextRendererAccessor.getEndTime();
-        DuskwoodManor.LOGGER.info("yeah2 {} {}", welcomeTime, endTime);
 
         if (welcomeTime > 0) {
             if (player != null) {
