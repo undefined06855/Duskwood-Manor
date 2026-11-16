@@ -19,7 +19,7 @@ import net.minecraft.util.hit.EntityHitResult;
 
 @Mixin(RoleNameRenderer.class)
 public class RoleNameRendererMixin {
-    @WrapOperation(method = "renderHud", at = @At(value = "INVOKE", target = "Lnet/minecraft/text/Text;translatable(Ljava/lang/String;)Lnet/minecraft/text/MutableText;"))
+    @WrapOperation(method = "displayCohortOverlay", at = @At(value = "INVOKE", target = "Lnet/minecraft/text/Text;translatable(Ljava/lang/String;)Lnet/minecraft/text/MutableText;"))
     private static MutableText translatable(String key, Operation<MutableText> original) {
         if (key != "game.tip.cohort" || GameWorldComponent.KEY.get(MinecraftClient.getInstance().player.getWorld()).getGameMode() != ManorGameModes.HITMAN) {
             return original.call(key);

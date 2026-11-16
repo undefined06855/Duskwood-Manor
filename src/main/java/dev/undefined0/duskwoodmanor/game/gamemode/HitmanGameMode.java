@@ -15,7 +15,7 @@ import dev.doctor4t.wathe.game.GameConstants;
 import dev.doctor4t.wathe.game.GameFunctions;
 import dev.doctor4t.wathe.game.GameFunctions.WinStatus;
 import dev.doctor4t.wathe.index.WatheItems;
-import dev.doctor4t.wathe.util.AnnounceWelcomePayload;
+import dev.doctor4t.wathe.network.AnnounceWelcomePayload;
 import dev.undefined0.duskwoodmanor.DuskwoodManor;
 import dev.undefined0.duskwoodmanor.ManorUtils;
 import dev.undefined0.duskwoodmanor.cca.HitmanDataComponent;
