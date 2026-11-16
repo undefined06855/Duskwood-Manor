@@ -2,10 +2,14 @@
 <p align="middle"><img src="manor.png" width=320 alt="A square render of the front door of the mansion, in the same style as the Harpy's Express logo, rendered in Blender." /></p>
 
 A mod for the [Wathe](https://modrinth.com/mod/wathe) map Duskwood Manor by somewhat_grand! Adds support for the map, as
-well as a new gamemode - Hitman. Start the default Murder gamemode by knocking on the door, and start a game of Hitman
+well as a new gamemode - Hitman (beta). Start the default Murder gamemode by knocking on the door, and start a game of Hitman
 by using the `/wathe:start` command!
 
 Join the Discord at https://discord.gg/vvgf9By77!
+
+Note: At this point (Nov. 2026), the project is very old and I will likely not be updating it anymore. Pull requests
+will certainly still be merged! There are still a few issues with the Hitman gamemode, as well as speed concerns with
+resetting the map, but these will likely not be addressed.
 
 ## Setup
 For setup instructions, please see the

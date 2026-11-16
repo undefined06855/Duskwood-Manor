@@ -28,6 +28,8 @@ public class GameFunctionsKillMixin {
 
         // indirect = dark, hunter = red
         // direct = light , target = green
+        // TODO: when you're ingame you can't actually see chat, so this only worked when we had a patched version of
+        // the base mod... maybe just add that patch to this mod?
 
         int darkGreen = 0x0b5920;
         int darkRed = 0x590b1c;
